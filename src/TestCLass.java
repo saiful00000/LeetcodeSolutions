@@ -4,10 +4,14 @@ import java.util.Map;
 public class TestCLass {
 
     public static void main(String[] args) {
-        Map<Integer,Integer> map = new HashMap<>();
-        map.put(1,2);
-        map.put(1,3);
-
-        System.out.println(map);
+        int[] nums = {0,1,1,3,3};
+        int k = 4;
+        int n = nums.length;
+        for (int i = 0; i <= n-k; i++) {
+            for (int j = i; j < i+k; j++) {
+                System.out.print(nums[j] +" ");
+            }
+            System.out.println();
+        }
     }
 }
