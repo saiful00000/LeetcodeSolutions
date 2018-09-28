@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Leetcode_118_PascalsTriangle {
 
-    public static List<List<Integer>> generate(int n) {
+    public static List<List<Integer>> getRow(int n) {
         int[][] a = new int[n][n];
         List<List<Integer>> fList = new ArrayList<>();
 
