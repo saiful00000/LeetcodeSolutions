@@ -7,9 +7,14 @@ public class Leetcode_888_FairCandySwap {
         int[] resultArray = new int[2];
         int aSum = getSum(a);
         int bSum = getSum(b);
-        int difference = Math.abs(aSum - bSum);
+        int requiredSum = (aSum + bSum) / 2;
 
-        return resultArray;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+
+            }
+        }
+        return a;
 
     }
 
