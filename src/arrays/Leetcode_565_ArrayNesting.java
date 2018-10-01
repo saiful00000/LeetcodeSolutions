@@ -4,18 +4,22 @@ public class Leetcode_565_ArrayNesting {
 
     public static int arrayNesting(int[] nums) {
         int n = nums.length;
-        int s, count, temp, maxCount = 0;
+        boolean[] visited = new boolean[n];
+        int s, maxCount = 0;
 
         for (int i = 0; i < n; i++) {
-            s = i;
-            temp = nums[i];
-            count = 1;
-            while (temp != s) {
-                temp = nums[temp];
-                count++;
+            if (!visited[i]) {
+                int temp = nums[i];
+                int count = 0;
+
+                do {
+                    temp = nums[temp];
+                    count++;
+                    visited[temp] = true;
+                }
+                while (temp != nums[i]);
+                maxCount = Math.max(maxCount,count);
             }
-            if (maxCount < count)
-                maxCount = count;
         }
         return maxCount;
     }
