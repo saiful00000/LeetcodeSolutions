@@ -1,45 +1,33 @@
 package arrays;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Leetcode_34_CombinationSum {
 
-    public List<List<Integer>> combinationSum(int[] nums, int target) {
-        Map<Integer,Integer> map = new HashMap<>();
-        List<Integer> list = new ArrayList<>();
-        List<List<Integer>> finalList = new ArrayList<>();
+    public static List<List<Integer>> combinationSum(int[] nums, int target) {
+       List<List<Integer>> finalList = new ArrayList<>();
+        Arrays.sort(nums);
 
-        for (int v : nums) map.put(v,v);
-
-        for (int i = 0; i < nums.length; i++) {
-            int value = nums[i];
-            int dif = target - value;
-            if (value == target) {
-                list.add(value);
-                finalList.add(list);
-                list.clear();
-                continue;
-            }
-            int sum = value;
-            if (sum < target) {
-                while (sum < target) {
-                    if (map.containsKey(dif)) {
-                        list.add(value);
-                        list.add(map.get(dif));
-                        finalList.add(list);
-                        list.remove(list.size()-1);
-                    }
-                    sum += value;
-
-                }
-            }
-
-
-        }
+        search(finalList,new ArrayList<>(),nums,target,0);
 
         return finalList;
+    }
+
+    public static void search(List<List<Integer>> finalList, List<Integer> list, int[] nums, int target, int index) {
+        if (target < 0)
+            return;
+        if (target == 0) {
+            finalList.add(new ArrayList<>(list));
+            return;
+        }
+        for (int i = index; i < nums.length; i++) {
+            list.add(nums[i]);
+            search(finalList,list,nums,target - nums[i],i);
+            list.remove(list.size()-1);
+
+            if (target - nums[i] < 0)
+                break;
+        }
     }
 }
