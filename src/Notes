@@ -1,0 +1,18 @@
+
+
+***
+String input with main method
+
+public static void main(String[] args) {
+        String str = "0001";
+        String str2 = "0001";
+        System.out.println();
+}
+
+
+***
+Main method
+
+public static void main(String[] args) {
+        int[] a = {};
+}
