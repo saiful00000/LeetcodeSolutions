@@ -2,7 +2,7 @@ package arrays;
 
 public class Leetcode_153_FindMinimumRotatedSortedArray {
 
-    public static int findMin(int[] nums) {
+    public int findMin(int[] nums) {
         if (nums.length == 1) return nums[0];
 
         int left = 0;
