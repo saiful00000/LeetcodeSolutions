@@ -2,7 +2,7 @@ package arrays;
 
 public class Leetcode_33_SearchInARotatedSortedArray {
 
-    public static int search(int[] nums, int target) {
+    public int search(int[] nums, int target) {
         if (nums.length == 0 && nums == null) return -1;
 
         int left = 0;
