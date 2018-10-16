@@ -20,9 +20,4 @@ public class Leetcode_647_PelindromicSubstring {
             j++;
         }
     }
-
-    public static void main(String[] args) {
-        String s = "aaa";
-        System.out.println(new Leetcode_647_PelindromicSubstring().countSubstrings(s));
-    }
 }
