@@ -1,6 +1,6 @@
 package DynamicProgramming;
 
-public class Leetcode_300_LongestComonSubsequence {
+public class Leetcode_300_LongestIncreasingSubsequence {
 
     public int longestOfLIS(int[] nums) {
         int n = nums.length;
