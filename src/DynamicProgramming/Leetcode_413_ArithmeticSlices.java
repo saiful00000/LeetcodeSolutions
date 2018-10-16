@@ -7,12 +7,17 @@ public class Leetcode_413_ArithmeticSlices {
         int sum = 0;
         for (int i = 2; i < nums.length; i++) {
             if (nums[i] - nums[i - 1] == nums[i - 1] - nums[i - 2]) {
-                dp += 1;
+                dp = 1 + dp;
                 sum += dp;
             } else {
                 dp = 0;
             }
         }
-        return dp;
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1,2,3,4};
+        System.out.println(new Leetcode_413_ArithmeticSlices().numberOfArithmeticSlices(a));
     }
 }
