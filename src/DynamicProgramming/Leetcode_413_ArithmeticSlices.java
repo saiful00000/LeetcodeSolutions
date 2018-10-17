@@ -15,9 +15,4 @@ public class Leetcode_413_ArithmeticSlices {
         }
         return sum;
     }
-
-    public static void main(String[] args) {
-        int[] a = {1,2,3,4};
-        System.out.println(new Leetcode_413_ArithmeticSlices().numberOfArithmeticSlices(a));
-    }
 }
