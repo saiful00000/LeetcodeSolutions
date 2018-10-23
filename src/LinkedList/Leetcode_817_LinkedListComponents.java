@@ -6,7 +6,7 @@ import java.util.Set;
 public class Leetcode_817_LinkedListComponents {
     public int numComponents(ListNode head, int[] G) {
         Set<Integer> set = new HashSet<>();
-
+        for (int v:G) set.add(v);
         int count = 0;
         ListNode temp = head;
         while (temp != null) {
