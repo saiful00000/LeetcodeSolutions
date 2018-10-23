@@ -14,14 +14,48 @@ public class Leetcode_445_AddTwoNumber_II {
             l2 = l2.next;
         }
 
-        long sum = Long.parseLong(s1) + Long.parseLong(s2);
-        resultString = Long.toString(sum);
-        char[] ch = resultString.toCharArray();
-        for (int i = ch.length-1; i >= 0 ; i--) {
-            int value = Integer.parseInt(String.valueOf(ch[i]));
-            addFront(value);
+        char[] ch1 = s1.toCharArray(); int n1 = ch1.length-1;
+        char[] ch2 = s2.toCharArray(); int n2 = ch2.length-1;
+        int cary = 0;
+        while (n1 >= 0 || n2 >= 0) {
+            if (n1 < 0) {
+                int sum = Integer.parseInt(String.valueOf(ch2[n2])) + cary;
+                String strSum = Integer.toString(sum);
+                if (strSum.length() == 2) {
+                    addFront(Integer.parseInt(String.valueOf(strSum.charAt(1))));
+                    cary = 1;
+                } else {
+                    addFront(Integer.parseInt(strSum));
+                    cary = 0;
+                }
+                n2--;
+            } else if (n2 < 0) {
+                int sum = Integer.parseInt(String.valueOf(ch1[n1])) + cary;
+                String strSum = Integer.toString(sum);
+                if (strSum.length() == 2) {
+                    addFront(Integer.parseInt(String.valueOf(strSum.charAt(1))));
+                    cary = 1;
+                } else {
+                    addFront(Integer.parseInt(strSum));
+                    cary = 0;
+                }
+                n1--;
+            } else {
+                int sum = cary + Integer.parseInt(String.valueOf(ch1[n1])) + Integer.parseInt(String.valueOf(ch2[n2]));
+                String strSum = Integer.toString(sum);
+                if (strSum.length() == 2) {
+                    addFront(Integer.parseInt(String.valueOf(strSum.charAt(1))));
+                    cary = 1;
+                } else {
+                    addFront(Integer.parseInt(strSum));
+                    cary = 0;
+                }
+                n1--;n2--;
+            }
         }
-
+        if (cary == 1) {
+            addFront(1);
+        }
         return resultList;
     }
 
@@ -30,5 +64,4 @@ public class Leetcode_445_AddTwoNumber_II {
         newList.next = resultList;
         resultList = newList;
     }
-
 }
