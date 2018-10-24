@@ -6,6 +6,3 @@ public class TestCLass {
         System.out.println(s.length());
     }
 }
-
-
-
