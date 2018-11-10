@@ -6,30 +6,33 @@ import java.util.List;
 import java.util.Queue;
 
 public class Leetcode_872_Leaf_Similar_Trees {
+
+    List<Integer> list = new ArrayList<Integer>();
+
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
 
-        list1 = getLeaf(root1);
-        list2 = getLeaf(root2);
+        getLeaf(root1);
+        list1 = list;
+        list = new ArrayList<>();
+        getLeaf(root2);
+        list2 = list;
+        list = new ArrayList<>();
+
+        System.out.println(list1);
+        System.out.println(list2);
 
         return list1.equals(list2);
     }
 
-    public List<Integer> getLeaf(TreeNode root) {
-        List<Integer> list = new ArrayList<Integer>();
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.add(root);
+    public void getLeaf(TreeNode root) {
+        if (root != null) {
+            if (root.left == null && root.right == null)
+                list.add(root.val);
 
-        while (!queue.isEmpty()) {
-            TreeNode temp = queue.poll();
-            if (temp.left == null && temp.right == null)
-                list.add(temp.val);
-            if (temp.left != null)
-                queue.add(temp.left);
-            if (temp.right != null)
-                queue.add(temp.right);
+            getLeaf(root.left);
+            getLeaf(root.right);
         }
-        return list;
     }
 }
