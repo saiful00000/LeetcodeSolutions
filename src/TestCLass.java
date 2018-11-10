@@ -2,11 +2,16 @@ import java.util.*;
 
 public class TestCLass {
     public static void main(String[] args) {
-        Stack<int[]> stack = new Stack<int[]>();
-        stack.push(new int[] {1,2});
+        List<Integer> list = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
 
-        int i[] = stack.pop();
+        list.add(1);
+        list2.add(1);
 
-        System.out.println(Arrays.toString(i));
+        if (list.equals(list2))
+            System.out.println("yes");
+        else
+            System.out.println("not");
+
     }
 }

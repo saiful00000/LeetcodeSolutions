@@ -16,11 +16,11 @@ public class BinaryTree {
         binaryTree.root.right = new TreeNode(20);
         binaryTree.root.right.left = new TreeNode(15);
         binaryTree.root.right.right = new TreeNode(7);
-        //binaryTree.root.left.left = new TreeNode(100);
-        //binaryTree.root.left.right = new TreeNode(200);
+        binaryTree.root.left.left = new TreeNode(100);
+        binaryTree.root.left.right = new TreeNode(200);
 
-        Leetcode_110_Balanced_BInaryTree e110e = new Leetcode_110_Balanced_BInaryTree();
-        boolean result = e110e.isBalanced(binaryTree.root);
+        Leetcode_872_Leaf_Similar_Trees e110e = new Leetcode_872_Leaf_Similar_Trees();
+        boolean result = e110e.leafSimilar(binaryTree.root,binaryTree.root);
         System.out.println(result);
     }
 }
