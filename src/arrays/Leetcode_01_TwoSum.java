@@ -10,9 +10,8 @@ public class Leetcode_01_TwoSum {
         map.put(nums[0], 0);
 
         for (int i = 1; i < nums.length; i++) {
-            int comp = target - nums[i];
-            if (map.containsKey(comp)) {
-                a[0] = map.get(comp);
+            if (map.containsKey(target - nums[i])) {
+                a[0] = map.get(target - nums[i]);
                 a[1] = i;
                 break;
             }
