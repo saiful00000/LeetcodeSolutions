@@ -20,8 +20,8 @@ public class BinaryTree {
         binaryTree.root.left.left.left = new TreeNode(45);
         //binaryTree.root.left.right = new TreeNode(200);
 
-        Leetcode_104_MaximumDepthOfABinaryTree tree = new Leetcode_104_MaximumDepthOfABinaryTree();
-        int result = tree.maxDepth(binaryTree.root);
-        System.out.println(result);
+        Leetcode_515_Find_Largest_Value_In_Each_Tree_Row tree = new Leetcode_515_Find_Largest_Value_In_Each_Tree_Row();
+        //int result = tree.largestValues(binaryTree.root);
+        System.out.println(tree.largestValues(binaryTree.root));
     }
 }
