@@ -17,10 +17,11 @@ public class BinaryTree {
         //binaryTree.root.right.left = new TreeNode(15);
         //binaryTree.root.right.right = new TreeNode(7);
         binaryTree.root.left.left = new TreeNode(4);
+        binaryTree.root.left.left.left = new TreeNode(45);
         //binaryTree.root.left.right = new TreeNode(200);
 
-        Leetcode_606_Construct_String_From_BinaryTree tree = new Leetcode_606_Construct_String_From_BinaryTree();
-        String result = tree.tree2str(binaryTree.root);
+        Leetcode_104_MaximumDepthOfABinaryTree tree = new Leetcode_104_MaximumDepthOfABinaryTree();
+        int result = tree.maxDepth(binaryTree.root);
         System.out.println(result);
     }
 }
