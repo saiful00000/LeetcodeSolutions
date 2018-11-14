@@ -20,8 +20,8 @@ public class BinaryTree {
         binaryTree.root.left.left.left = new TreeNode(45);
         //binaryTree.root.left.right = new TreeNode(200);
 
-        Leetcode_515_Find_Largest_Value_In_Each_Tree_Row tree = new Leetcode_515_Find_Largest_Value_In_Each_Tree_Row();
+        Leetcode_653_TwoSum_IV__Input_Is_A_BST tree = new Leetcode_653_TwoSum_IV__Input_Is_A_BST();
         //int result = tree.largestValues(binaryTree.root);
-        System.out.println(tree.largestValues(binaryTree.root));
+        System.out.println(tree.findTarget(binaryTree.root, 1));
     }
 }

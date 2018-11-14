@@ -22,7 +22,7 @@ public class Leetcode_515_Find_Largest_Value_In_Each_Tree_Row {
                 child.add(parent.poll());
             }
 
-            int max = Integer.MIN_VALUE;
+            int  max = Integer.MIN_VALUE;
 
             while (!child.isEmpty()) {
                 TreeNode temp = child.poll();
