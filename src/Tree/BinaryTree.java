@@ -17,11 +17,11 @@ public class BinaryTree {
         //binaryTree.root.right.left = new TreeNode(15);
         //binaryTree.root.right.right = new TreeNode(7);
         binaryTree.root.left.left = new TreeNode(4);
-        binaryTree.root.left.left.left = new TreeNode(45);
+        //binaryTree.root.left.left.left = new TreeNode(45);
         //binaryTree.root.left.right = new TreeNode(200);
 
-        Leetcode_653_TwoSum_IV__Input_Is_A_BST tree = new Leetcode_653_TwoSum_IV__Input_Is_A_BST();
+        Leetcode_563_BinaryTreeTitl tree = new Leetcode_563_BinaryTreeTitl();
         //int result = tree.largestValues(binaryTree.root);
-        System.out.println(tree.findTarget(binaryTree.root, 1));
+        System.out.println(tree.findTilt(binaryTree.root));
     }
 }
