@@ -1,13 +1,14 @@
-public class Test {
-    public static void printY(int y) {
-        if (y > 0) {
-            System.out.println(y);
-            printY(y-1);
-            System.out.println(y);
-        }
-    }
+import java.util.Deque;
+import java.util.LinkedList;
 
+public class Test {
     public static void main(String[] args) {
-        printY(5);
+        Deque<Integer> d = new LinkedList<>();
+        d.add(2);
+        d.add(3);
+        d.add(4);
+        d.add(5);
+
+        System.out.println();
     }
 }

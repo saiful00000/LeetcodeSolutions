@@ -20,8 +20,8 @@ public class BinaryTree {
         //binaryTree.root.left.left.left = new TreeNode(45);
         //binaryTree.root.left.right = new TreeNode(200);
 
-        Leetcode_563_BinaryTreeTitl tree = new Leetcode_563_BinaryTreeTitl();
+        Leetcode_199_BinaryTreeRightSideView tree = new Leetcode_199_BinaryTreeRightSideView();
         //int result = tree.largestValues(binaryTree.root);
-        System.out.println(tree.findTilt(binaryTree.root));
+        System.out.println(tree.rightSideView(binaryTree.root));
     }
 }
