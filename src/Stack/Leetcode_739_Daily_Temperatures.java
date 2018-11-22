@@ -10,24 +10,16 @@ public class Leetcode_739_Daily_Temperatures {
         Stack<Integer> stack = new Stack<>();
 
         for (int i = tempa.length - 1; i >= 0; i--) {
-            stack.push(tempa[i]);
-        }
-
-        for (int i = 1; i <= tempa.length - 1; i++) {
-            int current = stack.pop();
-            int count = 1;
-            int j = i;
-            while (current > tempa[j] && j < tempa.length-1) {
-                j++;
-                count++;
+            while (!stack.isEmpty() && tempa[i] >= tempa[stack.peek()]) {
+                stack.pop();
             }
 
-            if (j == tempa.length-1 && current > tempa[tempa.length-1])
-                result[i-1] = 0;
-            else if (j <= tempa.length-1)
-                result[i-1] = count;
+            if (stack.isEmpty())
+                result[i] = 0;
             else
-                result[i-1] = 0;
+                result[i] = stack.peek() - i;
+
+            stack.push(i);
         }
         return result;
     }
