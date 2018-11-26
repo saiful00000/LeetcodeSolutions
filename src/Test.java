@@ -5,8 +5,7 @@ public class Test {
 
 
     public static void main(String[] args) {
-        String s = "abcdefab";
-        System.out.println(s.lastIndexOf('a'));
+        System.out.println(Integer.MIN_VALUE/2);
     }
 }
 

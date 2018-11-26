@@ -9,24 +9,22 @@ public class Leetcode_821_Shortest_Distance_to_a_Character {
         System.out.println(Arrays.toString(shortestToChar(s,c)));
     }
 
-    public static int[] shortestToChar(String s, char c) {
+    private static int[] shortestToChar(String s, char c) {
         int len = s.length();
-        int lastOcurence = s.lastIndexOf(c);
         int[] distances = new int[len];
-
-        for (int i = lastOcurence; i < len; i++)
-            distances[i] = 0;
-
-        for (int i = 0; i < lastOcurence; i++) {
+        int prev = Integer.MIN_VALUE / 2;
+        for (int i = 0; i < len; i++) {
             if (s.charAt(i) == c) {
-                distances[i] = 0;
-                continue;
+                prev = i;
             }
-            int count = 1;
-            for (int j = i; s.charAt(j+1) != c; j++) {
-                count++;
+            distances[i] = i - prev;
+        }
+        prev = Integer.MAX_VALUE / 2;
+        for (int i = len - 1; i >= 0; i--) {
+            if (s.charAt(i) == c) {
+                prev = i;
             }
-            distances[i] = count;
+            distances[i] = Math.min(distances[i], prev - i);
         }
         return distances;
     }
