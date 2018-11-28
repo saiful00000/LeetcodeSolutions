@@ -1,16 +1,14 @@
-package Tree;
+package Contests.VirtualContest_02;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class Leetcode_102_BinaryTree_Level_Order_Traversal {
+public class Problem_02_Leetcode_513 {
+    public int findBottomLeftValue(TreeNode root) {
+        if (root == null) return 0;
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        if (root == null) return new ArrayList<List<Integer>>();
-
-        List<List<Integer>> bigList = new ArrayList<List<Integer>>();
         Queue<TreeNode> nodeQ = new LinkedList<TreeNode>();
         Queue<TreeNode> printQ = new LinkedList<TreeNode>();
 
@@ -28,9 +26,9 @@ public class Leetcode_102_BinaryTree_Level_Order_Traversal {
                 if (temp.right != null)
                     printQ.add(temp.right);
             }
-
-            bigList.add(list);
+            if (printQ.isEmpty())
+                return list.get(0);
         }
-        return bigList;
+        return 0;
     }
 }
