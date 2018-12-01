@@ -8,28 +8,16 @@ public class Leetcode_657_Robot_Return_To_The_Origin {
         for (int i = 0; i < moves.length(); i++) {
             char c = moves.charAt(i);
             if (c == 'U') {
-                if (down == 0)
-                    up++;
-                else
-                    down--;
+                up++;
             } else if (c == 'D') {
-                if (up == 0)
-                    down++;
-                else
-                    up--;
+                down++;
             } else if (c == 'L') {
-                if (right == 0)
-                    left++;
-                else
-                    right--;
+                left++;
             } else if (c == 'R') {
-                if (left == 0)
-                    right++;
-                else
-                    left--;
+                right++;
             }
         }
-        return (left == 0 && right == 0 && up == 0 && down == 0);
+        return (left == right) && (up == down);
     }
 
     public static void main(String[] args) {
