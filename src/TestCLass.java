@@ -2,16 +2,18 @@ import java.util.*;
 
 public class TestCLass {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
+        int[] a = {1, 2, 3, 4};
+        String s = "";
 
-        list.add(1);
-        list2.add(1);
+        for (int i = 0; i < a.length; i++) {
+            s += a[i];
+        }
 
-        if (list.equals(list2))
-            System.out.println("yes");
-        else
-            System.out.println("not");
+        System.out.println(s);
+
+        StringBuilder ss = new StringBuilder("saiful");
+        ss.setCharAt(0, 'a');
+        System.out.println(ss);
 
     }
 }
