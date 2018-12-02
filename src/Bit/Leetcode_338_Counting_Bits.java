@@ -20,6 +20,7 @@ public class Leetcode_338_Counting_Bits {
         return count;
     }
 
+
     public static void main(String[] args) {
         int n = 5;
         System.out.println(Arrays.toString(countBits(n)));
