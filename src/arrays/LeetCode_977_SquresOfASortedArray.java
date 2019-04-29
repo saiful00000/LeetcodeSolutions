@@ -5,23 +5,18 @@ import java.util.Arrays;
 public class LeetCode_977_SquresOfASortedArray {
 
     public static int[] sortedSquares(int[] array) {
-
         int len = array.length;
         int result[] = new int[len];
-        result[0] = (int) Math.pow(array[0], 2);
+        int left = 0;
+        int right = len-1;
 
-        result[0] = (int) Math.pow(array[0], 2);
-        for (int i = 1; i < len; i++) {
-            int p = (int) Math.pow(array[i], 2);
-            result[i] = p;
-            if (result[i] < result[i - 1]) {
-                int x = i;
-                while (x > 0 && result[x] < result[x-1]) {
-                    int temp = result[x];
-                    result[x] = result[x-1];
-                    result[x-1] = temp;
-                    x--;
-                }
+        for (int i = len-1; i >= 0; i--) {
+            if (Math.abs(array[left]) > Math.abs(array[right])) {
+                result[i] = array[left] * array[left];
+                left++;
+            } else {
+                result[i] = array[right] * array[right];
+                right--;
             }
         }
         return result;
