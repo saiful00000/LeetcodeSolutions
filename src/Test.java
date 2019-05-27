@@ -4,10 +4,17 @@ public class Test {
 
     public static void main(String[] args) {
 
-        int[] a = new int[100];
-        System.out.println(Math.pow(-4,2));
+        String string = "-90e3";
+        boolean numeric = true;
 
+        numeric = string.matches("-?\\d+(\\.\\d+)?");
+
+        if (numeric)
+            System.out.println(string + " is a number");
+        else
+            System.out.println(string + " is not a number");
     }
+
 }
 
 
