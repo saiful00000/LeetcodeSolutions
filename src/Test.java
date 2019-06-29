@@ -3,16 +3,15 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-
-        String string = "-90e3";
-        boolean numeric = true;
-
-        numeric = string.matches("-?\\d+(\\.\\d+)?");
-
-        if (numeric)
-            System.out.println(string + " is a number");
-        else
-            System.out.println(string + " is not a number");
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= 3 ; j++) {
+                for (int k = 1; k <= 4; k++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
     }
 
 }
