@@ -3,12 +3,8 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        String s = "saiful";
-        String ss = "saiful";
+        Map<Integer , Integer> map = new HashMap<>();
 
-        if (s == ss) {
-            System.out.println("Yes");
-        }
     }
 
 }
